@@ -1,0 +1,88 @@
+.effect-page {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2d1b4e 50%, #1a1a2e 100%);
+}
+
+.effect-content { max-width: 1200px; }
+
+.section-title { font-size: 2rem; font-weight: 700; text-align: center; margin: 3rem 0 2rem; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* Theory Section */
+.theory-section { margin-bottom: 3rem; }
+.theory-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 2rem; text-align: center; margin-bottom: 2rem; }
+.theory-text { font-size: 1.2rem; color: rgba(255,255,255,0.85); line-height: 1.8; max-width: 700px; margin: 0 auto; }
+.theory-text strong { color: #f093fb; }
+
+/* Lifecycle Visual */
+.lifecycle-visual { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+.lifecycle-step { background: rgba(255,255,255,0.03); border: 2px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; text-align: center; min-width: 140px; transition: all 0.3s ease; }
+.lifecycle-step:hover { transform: translateY(-5px); }
+.lifecycle-step.mount { border-color: #43e97b; }
+.lifecycle-step.update { border-color: #4facfe; }
+.lifecycle-step.unmount { border-color: #f5576c; }
+.step-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+.lifecycle-step h4 { color: #fff; margin: 0 0 0.25rem; }
+.lifecycle-step p { color: rgba(255,255,255,0.6); margin: 0 0 0.5rem; font-size: 0.85rem; }
+.lifecycle-step code { display: block; background: rgba(0,0,0,0.3); padding: 0.25rem 0.5rem; border-radius: 4px; font-size: 0.75rem; color: #43e97b; }
+.lifecycle-arrow { font-size: 2rem; color: rgba(255,255,255,0.3); }
+
+.syntax-box { background: rgba(0,0,0,0.3); border-radius: 16px; padding: 1.5rem; margin-bottom: 2rem; }
+.syntax-box h4 { color: #fff; margin: 0 0 1rem; }
+
+/* Dependencies */
+.deps-explanation { background: rgba(255,255,255,0.03); border-radius: 16px; padding: 1.5rem; }
+.deps-explanation h4 { color: #fff; margin: 0 0 1rem; text-align: center; }
+.deps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; }
+.dep-card { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1rem; text-align: center; }
+.dep-card code { display: block; background: rgba(240,147,251,0.2); color: #f093fb; padding: 0.5rem; border-radius: 6px; margin-bottom: 0.5rem; font-size: 1rem; }
+.dep-card p { color: rgba(255,255,255,0.7); margin: 0; font-size: 0.9rem; }
+
+/* Examples */
+.examples-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+.example-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; transition: all 0.3s ease; }
+.example-card:hover { border-color: #f093fb; transform: translateY(-3px); }
+.example-card.wide { grid-column: span 2; }
+.example-card h3 { color: #fff; margin: 0 0 1rem; font-size: 1.1rem; }
+
+.example-demo { background: rgba(0,0,0,0.2); border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; }
+
+.example-code { background: rgba(0,0,0,0.4); border-radius: 8px; padding: 0.75rem; overflow-x: auto; }
+.example-code pre { color: #43e97b; font-size: 0.8rem; font-family: 'Courier New', monospace; margin: 0; }
+
+/* Window Width */
+.width-display { display: flex; align-items: baseline; gap: 0.25rem; }
+.width-value { font-size: 3.5rem; font-weight: 700; color: #f093fb; font-family: 'Courier New', monospace; }
+.width-unit { font-size: 1.5rem; color: rgba(255,255,255,0.5); }
+
+/* Timer */
+.timer-display { font-size: 3.5rem; font-weight: 700; color: #4facfe; font-family: 'Courier New', monospace; }
+.timer-buttons { display: flex; gap: 0.5rem; }
+.timer-buttons button { padding: 0.75rem 1.25rem; border: none; border-radius: 8px; background: rgba(255,255,255,0.1); color: white; cursor: pointer; transition: all 0.2s ease; font-size: 1rem; }
+.timer-buttons button:hover { background: rgba(255,255,255,0.2); }
+
+/* Data Fetching */
+.fetch-demo { flex-direction: row; justify-content: space-around; flex-wrap: wrap; }
+.user-selector { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+.user-selector span { color: rgba(255,255,255,0.7); }
+.user-buttons { display: flex; gap: 0.5rem; }
+.user-buttons button { width: 40px; height: 40px; border: 2px solid rgba(255,255,255,0.2); border-radius: 50%; background: transparent; color: white; cursor: pointer; font-weight: 600; transition: all 0.2s ease; }
+.user-buttons button:hover { border-color: #f093fb; }
+.user-buttons button.active { background: #f093fb; border-color: #f093fb; }
+
+.user-result { min-width: 200px; min-height: 80px; display: flex; align-items: center; justify-content: center; }
+.loading-state { color: #4facfe; animation: pulse 1s ease infinite; }
+.user-card { display: flex; align-items: center; gap: 1rem; background: rgba(255,255,255,0.05); padding: 1rem 1.5rem; border-radius: 12px; }
+.user-avatar { font-size: 2.5rem; }
+.user-info { display: flex; flex-direction: column; }
+.user-info strong { color: #fff; }
+.user-info span { color: rgba(255,255,255,0.6); font-size: 0.85rem; }
+
+/* Use Cases */
+.usecases-section { margin: 3rem 0; }
+.usecases-grid { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+.usecase { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 12px; padding: 1.25rem 2rem; transition: all 0.3s ease; }
+.usecase:hover { border-color: #f093fb; transform: translateY(-3px); }
+.usecase span { font-size: 2rem; }
+.usecase p { margin: 0; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@media (max-width: 768px) { .example-card.wide { grid-column: span 1; } .fetch-demo { flex-direction: column; } .lifecycle-visual { flex-direction: column; } .lifecycle-arrow { transform: rotate(90deg); } }

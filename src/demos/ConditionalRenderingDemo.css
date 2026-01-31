@@ -1,0 +1,62 @@
+.conditional-page {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2e1a4a 50%, #1a1a2e 100%);
+}
+
+.conditional-content { max-width: 1400px; }
+.intro-section { text-align: center; margin-bottom: 3rem; }
+.intro-text { font-size: 1.2rem; color: rgba(255,255,255,0.8); line-height: 1.8; max-width: 800px; margin: 0 auto; }
+.intro-text strong { color: #a855f7; }
+
+.section-title { font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2rem; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.demos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+
+.demo-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 1.5rem; transition: all 0.3s ease; }
+.demo-card:hover { border-color: #a855f7; transform: translateY(-3px); }
+.demo-card h3 { color: #fff; margin-bottom: 1rem; font-size: 1.2rem; }
+
+.demo-preview { min-height: 100px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
+
+.state-box { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 1.5rem; text-align: center; width: 100%; transition: all 0.3s ease; }
+.state-box.logged-in { border: 2px solid #43e97b; background: rgba(67,233,123,0.1); }
+.state-box.logged-out { border: 2px solid #ff6b6b; background: rgba(255,107,107,0.1); }
+.state-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
+.toggle-btn { width: 100%; padding: 0.75rem; background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%); border: none; color: white; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; margin-bottom: 0.75rem; }
+.toggle-btn:hover { transform: translateY(-2px); }
+
+.code-mini { background: rgba(0,0,0,0.4); border-radius: 8px; padding: 0.75rem; }
+.code-mini code { color: #43e97b; font-size: 0.8rem; font-family: 'Courier New', monospace; }
+
+.details-popup { margin-top: 1rem; padding: 1rem; background: rgba(168,85,247,0.2); border-radius: 8px; animation: fadeIn 0.3s ease; }
+.details-popup p { margin: 0.25rem 0; color: rgba(255,255,255,0.8); font-size: 0.9rem; }
+
+.badge { display: inline-block; padding: 0.5rem 1rem; border-radius: 8px; font-weight: 600; }
+.badge.admin { background: rgba(255,107,107,0.2); color: #ff6b6b; }
+.badge.editor { background: rgba(79,172,254,0.2); color: #4facfe; }
+.badge.user { background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.7); }
+
+.role-buttons { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.role-buttons button { flex: 1; padding: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: white; border-radius: 6px; cursor: pointer; transition: all 0.2s ease; }
+.role-buttons button.active { background: #a855f7; border-color: #a855f7; }
+.role-buttons button:hover { border-color: #a855f7; }
+
+.action-buttons { display: flex; gap: 0.5rem; margin-bottom: 0.75rem; }
+.action-buttons button { flex: 1; padding: 0.5rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.2); color: white; border-radius: 6px; cursor: pointer; }
+.action-buttons button:hover { background: rgba(255,255,255,0.1); }
+
+.loading-spinner { color: #4facfe; animation: pulse 1s ease infinite; }
+.error-state { color: #ff6b6b; }
+.success-state { color: #43e97b; }
+
+.techniques-section { margin: 4rem 0; }
+.techniques-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.technique-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.5rem; text-align: center; transition: all 0.3s ease; }
+.technique-card:hover { transform: translateY(-5px); border-color: #a855f7; }
+.tech-icon { font-size: 2.5rem; display: block; margin-bottom: 0.75rem; }
+.technique-card h4 { color: #fff; margin-bottom: 0.5rem; }
+.technique-card code { color: #43e97b; font-size: 0.85rem; background: rgba(0,0,0,0.3); padding: 0.25rem 0.5rem; border-radius: 4px; }
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+@media (max-width: 768px) { .demos-grid { grid-template-columns: 1fr; } }
