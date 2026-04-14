@@ -56,6 +56,29 @@ function RateLimitingDemo({ onBack }) {
                         <strong>Rate limiting</strong> controls the number of requests a client can make
                         in a given time period, protecting APIs from abuse and ensuring fair usage.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Without rate limiting, one bad actor could send millions of requests and crash your server, or a bug in a client app could accidentally DDoS you. Rate limiting ensures fair resource distribution and protects your infrastructure — it's why Twitter limits tweets and APIs limit calls per minute.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div className="terminology-section" style={{ marginBottom: '2rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                        {[
+                            { term: 'Rate Limit', desc: 'Maximum requests allowed in a time window (e.g., 100 req/min).' },
+                            { term: '429 Too Many Requests', desc: 'HTTP status code returned when rate limit is exceeded.' },
+                            { term: 'Throttling', desc: 'Slowing down requests instead of blocking them entirely.' },
+                            { term: 'Burst', desc: 'Allowing a spike of requests above the normal rate for short periods.' },
+                            { term: 'X-RateLimit Headers', desc: 'HTTP headers that tell clients their remaining quota and reset time.' },
+                            { term: 'API Key', desc: 'Unique identifier to track and limit requests per client/user.' },
+                        ].map((item, i) => (
+                            <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="simulator-container">

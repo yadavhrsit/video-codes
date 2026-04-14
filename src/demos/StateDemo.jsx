@@ -36,6 +36,29 @@ function StateDemo({ onBack }) {
                             <strong>State</strong> is data that changes over time in your component.
                             When state changes, React automatically re-renders the component to reflect the new data.
                         </p>
+                        <p className="theory-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                            <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Without state, your UI would be static. State is what makes React apps interactive — every button click, form input, and animation relies on state changes. When state updates, React efficiently re-renders only the parts that changed, keeping your app fast.
+                        </p>
+                    </div>
+
+                    {/* Key Terminology */}
+                    <div style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1rem', color: '#fff', marginBottom: '0.75rem' }}>📖 Key Terminology</h3>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                            {[
+                                { term: 'useState', desc: 'React hook that declares a state variable. Returns [value, setter].' },
+                                { term: 'Setter Function', desc: 'The function returned by useState that updates the state value.' },
+                                { term: 'Initial Value', desc: 'The argument passed to useState. Sets the state\'s starting value.' },
+                                { term: 'Re-render', desc: 'When state changes, React calls your component again with the new state.' },
+                                { term: 'Immutability', desc: 'Never modify state directly. Always create new values (spread operator, map, filter).' },
+                                { term: 'Batching', desc: 'React groups multiple state updates into one re-render for performance.' },
+                            ].map((item, i) => (
+                                <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                    <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                    <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="key-points">

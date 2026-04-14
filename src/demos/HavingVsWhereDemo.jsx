@@ -48,6 +48,29 @@ function HavingVsWhereDemo({ onBack }) {
                         <strong>WHERE</strong> filters individual rows BEFORE grouping,
                         while <strong>HAVING</strong> filters groups AFTER aggregation.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> A common interview question and real-world confusion. WHERE can't use aggregate functions (SUM, COUNT) because aggregation hasn't happened yet. HAVING exists specifically to filter on aggregated results. Using the wrong one gives errors or wrong results.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                        {[
+                            { term: 'WHERE', desc: 'Filters individual rows before GROUP BY. Can\'t use aggregate functions.' },
+                            { term: 'HAVING', desc: 'Filters grouped results after GROUP BY. Can use SUM, COUNT, AVG, etc.' },
+                            { term: 'GROUP BY', desc: 'Combines rows with same values into summary rows. Enables aggregation.' },
+                            { term: 'Aggregate Function', desc: 'SUM, COUNT, AVG, MAX, MIN — functions that operate on groups of rows.' },
+                            { term: 'Execution Order', desc: 'FROM → WHERE → GROUP BY → HAVING → SELECT → ORDER BY.' },
+                            { term: 'Filter vs Having', desc: 'WHERE filters input rows; HAVING filters output groups.' },
+                        ].map((item, i) => (
+                            <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="comparison-container">

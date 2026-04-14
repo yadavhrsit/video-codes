@@ -137,6 +137,29 @@ function TransactionsDemo({ onBack }) {
                         A <strong>transaction</strong> is a sequence of database operations that are treated as a single unit of work.
                         It ensures data integrity and follows the <strong>ACID</strong> properties.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Imagine transferring $100 between accounts. If the system crashes after debiting one account but before crediting the other, you've lost money. Transactions guarantee that either both operations succeed, or neither does — your data stays consistent no matter what fails.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div className="terminology-section" style={{ marginBottom: '2rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                        {[
+                            { term: 'COMMIT', desc: 'Permanently saves all changes made during the transaction.' },
+                            { term: 'ROLLBACK', desc: 'Undoes all changes and returns database to its state before the transaction.' },
+                            { term: 'SAVEPOINT', desc: 'A checkpoint within a transaction. Can rollback to a savepoint without undoing everything.' },
+                            { term: 'Isolation Level', desc: 'Controls how transaction changes are visible to other transactions (READ COMMITTED, SERIALIZABLE, etc.).' },
+                            { term: 'Deadlock', desc: 'When two transactions wait for each other indefinitely. Database must kill one.' },
+                            { term: 'Write-Ahead Log', desc: 'How databases achieve durability — writes logged to disk before applied.' },
+                        ].map((item, i) => (
+                            <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Interactive Transaction Simulator */}

@@ -109,6 +109,29 @@ function CachingDemo({ onBack }) {
                         <strong>Caching</strong> stores frequently accessed data in fast memory,
                         reducing database queries and dramatically improving response times.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Database queries can take 50-500ms. Reading from cache (like Redis) takes 1-5ms — that's 10-100x faster. For a page making 20 DB calls, caching can reduce load time from 2 seconds to 50ms. At scale, caching is the difference between a responsive app and a slow one.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div className="terminology-section" style={{ marginBottom: '2rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                        {[
+                            { term: 'Cache Hit', desc: 'Data found in cache — fast response, no database query needed.' },
+                            { term: 'Cache Miss', desc: 'Data not in cache — must fetch from database, then cache it.' },
+                            { term: 'Hit Rate', desc: 'Percentage of requests served from cache. Higher = better performance.' },
+                            { term: 'TTL (Time To Live)', desc: 'How long data stays in cache before expiring. Balance freshness vs speed.' },
+                            { term: 'Cache Invalidation', desc: 'Removing stale data from cache. "The hardest problem in CS."' },
+                            { term: 'Redis', desc: 'Popular in-memory data store used for caching. Extremely fast.' },
+                        ].map((item, i) => (
+                            <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Interactive Cache Demo */}

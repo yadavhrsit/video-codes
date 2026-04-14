@@ -46,6 +46,29 @@ function ConditionalRenderingDemo({ onBack }) {
                         <strong>Conditional rendering</strong> allows you to render different UI
                         elements based on state, props, or other conditions in your React components.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Real apps show different content to different users — logged in vs out, admin vs regular user, loading vs loaded. Conditional rendering is how you build dynamic UIs that respond to state. It's one of the most frequently used patterns in React development.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div style={{ marginBottom: '1.5rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                        {[
+                            { term: 'Ternary Operator', desc: 'condition ? ifTrue : ifFalse. Most common way to conditionally render.' },
+                            { term: '&& Operator', desc: 'condition && element. Renders element only if condition is truthy.' },
+                            { term: 'Early Return', desc: 'Return early from component if condition met. Good for loading/error states.' },
+                            { term: 'Falsy Values', desc: '0, "", null, undefined, false. Watch out: 0 and "" will render!' },
+                            { term: 'null Rendering', desc: 'Returning null renders nothing. Useful to hide components.' },
+                            { term: 'Short-Circuit', desc: 'Using && and || for conditional logic. && stops at first falsy.' },
+                        ].map((item, i) => (
+                            <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="demos-grid">

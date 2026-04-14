@@ -63,6 +63,29 @@ function EffectDemo({ onBack }) {
                             <strong>useEffect</strong> lets you perform side effects in function components.
                             Side effects are operations that interact with the outside world: API calls, subscriptions, DOM manipulation, timers, etc.
                         </p>
+                        <p className="theory-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                            <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> React components are pure functions — they shouldn't have side effects during render. useEffect is the escape hatch: it runs your side effects after React updates the DOM. Without it, you couldn't fetch data, set up subscriptions, or sync with external systems.
+                        </p>
+                    </div>
+
+                    {/* Key Terminology */}
+                    <div style={{ marginTop: '1.5rem', marginBottom: '1.5rem' }}>
+                        <h3 style={{ fontSize: '1rem', color: '#fff', marginBottom: '0.75rem' }}>📖 Key Terminology</h3>
+                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '0.75rem' }}>
+                            {[
+                                { term: 'Side Effect', desc: 'Operations that affect things outside the component: API calls, DOM changes, timers.' },
+                                { term: 'Dependency Array', desc: 'The second argument to useEffect. Controls when the effect re-runs.' },
+                                { term: 'Cleanup Function', desc: 'The returned function that runs before the effect re-runs or on unmount.' },
+                                { term: 'Mount', desc: 'When a component is first added to the DOM. Effects run after mount.' },
+                                { term: 'Unmount', desc: 'When a component is removed from the DOM. Cleanup functions run here.' },
+                                { term: 'Stale Closure', desc: 'Bug where effect captures old values. Fix: add missing dependencies.' },
+                            ].map((item, i) => (
+                                <div key={i} style={{ background: 'rgba(102, 126, 234, 0.08)', border: '1px solid rgba(102, 126, 234, 0.2)', borderRadius: '0.75rem', padding: '0.75rem 1rem' }}>
+                                    <h4 style={{ color: '#667eea', fontSize: '0.85rem', marginBottom: '0.25rem', fontWeight: 600 }}>{item.term}</h4>
+                                    <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
                     </div>
 
                     <div className="lifecycle-visual">

@@ -68,6 +68,29 @@ function CDNDemo({ onBack }) {
                         A <strong>CDN</strong> is a network of servers distributed globally that cache and deliver content
                         from locations closer to users, reducing latency and improving load times.
                     </p>
+                    <p className="intro-text" style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.5)', marginTop: '0.75rem' }}>
+                        <strong style={{ color: 'rgba(255,255,255,0.65)' }}>Why it matters:</strong> Without a CDN, every user request travels to your origin server — if it's in the US and your user is in India, that's 12,000+ km each way. CDNs put copies of your content on servers worldwide, so users get data from nearby. This can reduce page load times from 2+ seconds to under 100ms.
+                    </p>
+                </div>
+
+                {/* Key Terminology */}
+                <div className="terminology-section" style={{ marginBottom: '2rem' }}>
+                    <h2 className="section-title">📖 Key Terminology</h2>
+                    <div className="benefits-grid">
+                        {[
+                            { term: 'Origin Server', desc: 'Your main server where the original content lives. CDNs pull from here.' },
+                            { term: 'Edge Server', desc: 'CDN servers located around the world, close to end users.' },
+                            { term: 'PoP (Point of Presence)', desc: 'A physical location where CDN edge servers are deployed.' },
+                            { term: 'Cache Hit/Miss', desc: 'Hit = content found on edge. Miss = must fetch from origin.' },
+                            { term: 'TTL (Time To Live)', desc: 'How long content stays cached before refreshing from origin.' },
+                            { term: 'Purge/Invalidation', desc: 'Forcing CDN to delete cached content and fetch fresh copies.' },
+                        ].map((item, i) => (
+                            <div key={i} className="benefit-card" style={{ background: 'rgba(36, 150, 237, 0.08)', border: '1px solid rgba(36, 150, 237, 0.2)' }}>
+                                <h4 style={{ color: '#2496ED', fontSize: '0.85rem', marginBottom: '0.25rem' }}>{item.term}</h4>
+                                <p style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', margin: 0 }}>{item.desc}</p>
+                            </div>
+                        ))}
+                    </div>
                 </div>
 
                 {/* Visual Comparison */}
